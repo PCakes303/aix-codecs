@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "aix-codecs",
+  "capabilities": [
+    {
+      "id": "canonical-json-encode",
+      "status": "experimental",
+      "summary": "Encode JSON-compatible data as RFC 8785 canonical UTF-8 bytes.",
+      "interface": "aix_codecs.canonical.canonicalize",
+      "evidence": ["tests/test_canonical.py"],
+      "limitations": ["Single-language Python reference implementation; independent cross-language conformance not yet tested."]
+    },
+    {
+      "id": "strict-json-decode",
+      "status": "experimental",
+      "summary": "Decode UTF-8 JSON while rejecting duplicate keys and non-standard numeric constants.",
+      "interface": "aix_codecs.canonical.decode_json",
+      "evidence": ["tests/test_canonical.py"],
+      "limitations": ["Payload-size and nesting-depth limits must be enforced by the caller."]
+    }
+  ]
+}
