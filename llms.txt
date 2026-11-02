@@ -1,0 +1,12 @@
+# AIX Codecs
+
+AIX Codecs provides experimental deterministic JSON serialization and strict decoding for AIX message payloads.
+
+- Project: https://github.com/PCakes303/agent-intelligence-ecosystem
+- AIX Core: https://github.com/PCakes303/aix-core
+- Contract: docs/CODEC-CONTRACT.md
+- Security boundary: SECURITY.md
+- Reference implementation: aix_codecs/canonical.py
+- Tests: tests/test_canonical.py
+
+AIX is an extension layer over established protocols. This repository does not authenticate senders, authorize actions, provide transport, or claim production interoperability.
