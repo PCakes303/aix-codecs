@@ -22,7 +22,7 @@ class CanonicalCodecTests(unittest.TestCase):
 
     def test_unicode_and_control_characters(self):
         value = {"€": "A\nB", "quote": 'a"b', "slash": "\\"}
-        self.assertEqual(canonicalize(value), b'{"quote":"a\\"b","slash":"\\\\","€":"A\\nB"}')
+        self.assertEqual(canonicalize(value), '{"quote":"a\\"b","slash":"\\\\","€":"A\\nB"}'.encode("utf-8"))
 
     def test_decode_round_trip(self):
         value = {"task": {"id": "task-001"}, "status": "requested"}
