@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "aix-codecs",
+  "compatibility": [
+    {
+      "target": "aix-core",
+      "relationship": "contract-dependency",
+      "status": "declared",
+      "tested": false,
+      "notes": "AIX Core owns semantic message schemas; schema-bound codec integration remains a next-stage task."
+    },
+    {
+      "target": "agent-schema-registry",
+      "relationship": "contract-dependency",
+      "status": "declared",
+      "tested": false,
+      "notes": "Registry owns schema versioning and compatibility policy; direct publication integration is not yet implemented."
+    }
+  ]
+}
