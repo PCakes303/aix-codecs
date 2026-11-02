@@ -17,7 +17,7 @@ Provide deterministic, interoperable serialization and decoding for AIX messages
 
 - AIX remains an extension layer over MCP, A2A, HTTP, JSON-RPC, and existing transports.
 - Canonical JSON follows RFC 8785 (JSON Canonicalization Scheme); do not invent a custom canonicalization algorithm.
-- Decoding rejects invalid UTF-8, malformed JSON, duplicate object keys, and non-standard numeric constants.
+- Decoding rejects invalid UTF-8, malformed JSON, duplicate object keys, non-standard/non-finite numeric values, payloads over 1 MiB, nesting over 32 levels, and containers over 10,000 items/properties.
 - Optional strict mode verifies that incoming bytes are already canonical.
 - Codec operations are deterministic and side-effect free.
 - Schema validation is a separate concern and must use the versioned AIX Core schema.
@@ -43,7 +43,7 @@ python -m unittest discover -s tests -v
 ## Build gates
 
 1. **Scaffold:** canonical encode/decode behavior, error handling, test vectors, CI.
-2. **Experimental:** schema-bound AIX message codec, cross-language vectors, fuzz/property tests, size/depth limits.
+2. **Experimental:** schema-bound AIX message codec, cross-language vectors, fuzz/property tests, cross-language RFC 8785 vectors, and integration-boundary budget tests.
 3. **Alpha:** at least two independent implementations produce byte-identical canonical output; compatibility tests against a pinned AIX Core schema.
 4. **Stable:** reviewed security model, reproducible artifacts, signed release provenance, migration policy, and conformance evidence.
 
