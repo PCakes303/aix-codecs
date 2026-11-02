@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_version": "1.0.0",
+  "id": "aix-codecs",
+  "name": "aix-codecs",
+  "visibility": "public",
+  "maturity": "scaffolding",
+  "summary": "Reference RFC 8785 canonical JSON encoding and strict decoding helpers for AIX message payloads.",
+  "license": {"expression": null, "status": "pending-review"},
+  "interfaces": [
+    {"name": "canonical-json-encode", "version": "0.1.0", "kind": "library-function", "stability": "experimental"},
+    {"name": "strict-json-decode", "version": "0.1.0", "kind": "library-function", "stability": "experimental"}
+  ],
+  "dependencies": [
+    {"id": "aix-core", "constraint": "semantic envelope and lifecycle contract; version TBD", "kind": "contract"},
+    {"id": "schema-registry", "constraint": "schema versioning and compatibility contract; version TBD", "kind": "contract"}
+  ],
+  "security": {
+    "threat_model": "SECURITY.md",
+    "secrets_in_repository": false,
+    "data_classification": "public",
+    "security_contact": null
+  },
+  "default_branch": "main",
+  "compatibility": [],
+  "evidence": [{"claim": "Reject duplicate JSON keys and malformed/non-standard JSON inputs.", "kind": "test", "location": "tests/test_canonical.py"}],
+  "$id": "https://github.com/PCakes303/aix-codecs/blob/main/manifest.json"
+}
