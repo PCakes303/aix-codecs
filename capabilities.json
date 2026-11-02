@@ -8,28 +8,27 @@
       "id": "aix.codec.canonical-json",
       "name": "RFC 8785 canonical JSON encoding",
       "status": "scaffolded",
-      "description": "A Python reference helper encodes JSON-compatible values as RFC 8785 canonical UTF-8 bytes.",
+      "description": "RFC 8785 canonical UTF-8 encoding with golden number, ordering, Unicode and negative-zero vectors.",
       "evidence": [
         "aix_codecs/canonical.py",
         "tests/test_canonical.py"
       ],
       "limitations": [
-        "Only a Python reference implementation exists; cross-language conformance vectors have not been tested.",
-        "Payload size and nesting-depth limits must be enforced by callers."
+        "Only a Python reference implementation exists; cross-language conformance has not been tested."
       ]
     },
     {
       "id": "aix.codec.strict-json-decode",
       "name": "Strict UTF-8 JSON decoding",
       "status": "scaffolded",
-      "description": "A strict JSON decoder rejects invalid UTF-8, malformed JSON, duplicate object keys and non-standard numeric constants, with optional canonical-form enforcement.",
+      "description": "Strict UTF-8 decoding rejects malformed JSON, duplicate keys, non-finite numbers and invalid Unicode; payloads, nesting and containers are bounded.",
       "evidence": [
         "aix_codecs/canonical.py",
         "tests/test_canonical.py"
       ],
       "limitations": [
-        "Schema-bound AIX message validation is a separate next-stage integration.",
-        "Payload size and nesting-depth limits must be enforced by callers."
+        "Schema-bound AIX message validation remains a separate integration concern.",
+        "No cross-language conformance suite exists."
       ]
     },
     {
