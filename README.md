@@ -1,9 +1,9 @@
-# AIX Codecs — Repository 12 build packet
+# AIX Codecs
 
 **Portfolio position:** 12 / 29 public repositories  
 **Repository name:** `aix-codecs`  
 **Layer:** Protocols  
-**Maturity:** prepared scaffold; not yet deployed to its standalone remote  
+**Maturity:** experimental reference implementation; deployed to the standalone public repository; Python 3.10–3.12 CI passing  
 **Depends on:** `aix-core`, `agent-schema-registry`
 
 ## Mission
@@ -44,7 +44,7 @@ python -m unittest discover -s tests -v
 3. **Alpha:** at least two independent implementations produce byte-identical canonical output; compatibility tests against a pinned AIX Core schema.
 4. **Stable:** reviewed security model, reproducible artifacts, signed release provenance, migration policy, and conformance evidence.
 
-No production, cross-language conformance, or release claim is made by this prepared packet.
+No production, cross-language conformance, or published release claim is made by this experimental implementation.
 
 ## Dependencies
 
