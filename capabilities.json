@@ -1,22 +1,54 @@
 {
-  "schema_version": "1.0.0",
+  "capabilities_version": "1.1.0",
   "repository": "aix-codecs",
+  "repository_id": "aix-codecs",
+  "maturity": "scaffolding",
   "capabilities": [
     {
-      "id": "canonical-json-encode",
-      "status": "experimental",
-      "summary": "Encode JSON-compatible data as RFC 8785 canonical UTF-8 bytes.",
-      "interface": "aix_codecs.canonical.canonicalize",
-      "evidence": ["tests/test_canonical.py"],
-      "limitations": ["Single-language Python reference implementation; independent cross-language conformance not yet tested."]
+      "id": "aix.codec.canonical-json",
+      "name": "RFC 8785 canonical JSON encoding",
+      "status": "scaffolded",
+      "description": "A Python reference helper encodes JSON-compatible values as RFC 8785 canonical UTF-8 bytes.",
+      "evidence": [
+        "aix_codecs/canonical.py",
+        "tests/test_canonical.py"
+      ],
+      "limitations": [
+        "Only a Python reference implementation exists; cross-language conformance vectors have not been tested.",
+        "Payload size and nesting-depth limits must be enforced by callers."
+      ]
     },
     {
-      "id": "strict-json-decode",
-      "status": "experimental",
-      "summary": "Decode UTF-8 JSON while rejecting duplicate keys and non-standard numeric constants.",
-      "interface": "aix_codecs.canonical.decode_json",
-      "evidence": ["tests/test_canonical.py"],
-      "limitations": ["Payload-size and nesting-depth limits must be enforced by the caller."]
+      "id": "aix.codec.strict-json-decode",
+      "name": "Strict UTF-8 JSON decoding",
+      "status": "scaffolded",
+      "description": "A strict JSON decoder rejects invalid UTF-8, malformed JSON, duplicate object keys and non-standard numeric constants, with optional canonical-form enforcement.",
+      "evidence": [
+        "aix_codecs/canonical.py",
+        "tests/test_canonical.py"
+      ],
+      "limitations": [
+        "Schema-bound AIX message validation is a separate next-stage integration.",
+        "Payload size and nesting-depth limits must be enforced by callers."
+      ]
+    },
+    {
+      "id": "aix.codec.cross-language-conformance",
+      "name": "Cross-language codec conformance",
+      "status": "planned",
+      "description": "Shared vectors and independent implementations will verify byte-identical canonicalization across languages.",
+      "evidence": [],
+      "limitations": [
+        "No second-language implementation or cross-language conformance suite exists yet."
+      ]
     }
+  ],
+  "explicit_non_capabilities": [
+    "Authentication or authorization",
+    "Message transport or protocol gateway",
+    "Schema registry publication or compatibility enforcement",
+    "Cryptographic signatures or sender authentication",
+    "Production interoperability certification",
+    "Private model reasoning or chain-of-thought serialization"
   ]
 }
