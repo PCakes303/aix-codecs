@@ -1,21 +1,18 @@
-# Repository 12 deployment and staging status
+# aix-codecs — deployment and staging checkpoint
 
-**Repository:** [PCakes303/aix-codecs](https://github.com/PCakes303/aix-codecs)  
-**Current remote head audited:** `9edce84c0f00db0fbe2d8ddfa302510329e66503`  
-**Historical deployment CI:** [Run 41408761297](https://github.com/PCakes303/aix-codecs/actions/runs/41408761297) — success on the original scaffold  
-**Staging source:** `provisioning/staged/aix-codecs/` in the master repository.
+**Remote:** https://github.com/PCakes303/aix-codecs
+**Audited remote main head:** `17f7ad92cb22e990f3aaa89892b2dd084035c8e6`
+**Latest verified CI:** [Run 41527218540](https://github.com/PCakes303/aix-codecs/actions/runs/41527218540) — success.
+**Staging source:** `provisioning/staged/aix-codecs/` in `agent-intelligence-ecosystem`.
 
-## Current deployment record
+## Exact staging parity
 
-The public remote exists and is authoritative for current implementation. Historical deployment file counts and CI runs are retained as provenance only; they do not prove current staging-to-remote byte parity.
+On 2026-11-02, the retained staging packet was compared with the live remote `main` Git tree after synchronization. **15 staged files match 15 remote files by path and Git blob SHA; zero missing, extra or differing files.** This count includes this status file.
 
-## Remaining verification
+## Scope and maturity
 
-- Refresh staging-to-remote path and blob-SHA parity against current `main` before portfolio-wide sign-off.
-- Verify GitHub About description, homepage and topics separately; the master metadata guide contains proposals, not applied settings.
-- Verify GitHub private vulnerability reporting/security advisory configuration; SECURITY.md records that a dedicated private reporting route is not currently published.
-- Retain pending license status until an explicit repository/artifact licensing decision is approved.
+Python RFC 8785 reference codec with strict bounded UTF-8 JSON decoding and golden vectors. Cross-language conformance and fuzz/property coverage remain outstanding; no production package or release is claimed.
 
-## Maturity and limitations
+## Portfolio governance
 
-The repository contains a Python RFC 8785 canonical JSON encoder and strict UTF-8 JSON decoder with duplicate-key and non-standard-number rejection. It is an experimental reference implementation, not a released or production-ready package. Cross-language conformance, expanded RFC edge-case vectors, fuzz/property tests, schema-bound AIX message tests, and caller-enforced payload/depth limits remain outstanding. No GitHub Release is published.
+License selection remains pending an explicit repository/artifact decision. GitHub About metadata, private vulnerability reporting, branch rulesets, Actions permissions and security-alert settings require separate live verification; this checkpoint does not claim those controls are enabled.
