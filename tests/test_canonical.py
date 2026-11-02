@@ -14,6 +14,9 @@ class CanonicalCodecTests(unittest.TestCase):
         value = {"numbers": [333333333.33333329, 1e30, 4.50, 2e-3, 1e-27]}
         self.assertEqual(canonicalize(value), b'{"numbers":[333333333.3333333,1e+30,4.5,0.002,1e-27]}')
 
+    def test_empty_object_key_is_valid_rfc8785_json(self):
+        self.assertEqual(canonicalize({"": 1}), b'{"":1}')
+
     def test_negative_zero_is_canonicalized(self):
         self.assertEqual(canonicalize(-0.0), b"0")
 
