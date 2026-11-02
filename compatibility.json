@@ -1,20 +1,21 @@
 {
-  "schema_version": "1.0.0",
+  "compatibility_version": "1.1.0",
   "repository": "aix-codecs",
-  "compatibility": [
+  "policy": "Dependencies describe architectural relationships only; they do not establish runtime interoperability. A dependency becomes tested only when reproducible cross-repository tests and evidence are published.",
+  "dependencies": [
     {
-      "target": "aix-core",
-      "relationship": "contract-dependency",
+      "repository_id": "aix-core",
+      "version_range": "contract version not yet pinned",
       "status": "declared",
-      "tested": false,
-      "notes": "AIX Core owns semantic message schemas; schema-bound codec integration remains a next-stage task."
+      "evidence": []
     },
     {
-      "target": "agent-schema-registry",
-      "relationship": "contract-dependency",
+      "repository_id": "schema-registry",
+      "version_range": "contract version not yet pinned",
       "status": "declared",
-      "tested": false,
-      "notes": "Registry owns schema versioning and compatibility policy; direct publication integration is not yet implemented."
+      "evidence": []
     }
-  ]
+  ],
+  "tested_combinations": [],
+  "breaking_change_policy": "Major versions may remove or change required fields or security semantics; minor versions add backward-compatible optional fields; patch versions correct editorial or non-semantic defects."
 }
