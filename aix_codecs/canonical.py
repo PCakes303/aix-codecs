@@ -25,8 +25,8 @@ def _validate_value(value: Any, depth: int = 0) -> None:
         if len(value) > MAX_CONTAINER_ITEMS:
             raise CodecError("JSON object exceeds property limit")
         for key, item in value.items():
-            if not isinstance(key, str) or not key or len(key) > MAX_OBJECT_KEY_LENGTH:
-                raise CodecError("JSON object keys must be non-empty bounded strings")
+            if not isinstance(key, str) or len(key) > MAX_OBJECT_KEY_LENGTH:
+                raise CodecError("JSON object keys must be bounded strings")
             _validate_value(item, depth + 1)
     elif isinstance(value, list):
         if len(value) > MAX_CONTAINER_ITEMS:
